@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <title>Portfolio</title>
+    </head>
+
+    <body>
+        <div class="settings-box">
+            <div class="toggle-display"><i class="fas fa-cog fa-lg"></i></div>
+
+            <div class="color-options">
+                <h4>Colors options</h4>
+                <ul class="colors-container">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="theme-modes">
+                <h4>Themes</h4>
+                <div class="theme-controls">
+                    <span class="light-theme active">Light</span>
+                    <span class="dark-theme">Dark</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="close-btn"><i class="fas fa-times"></i></div>
+                <img src="" alt="modal" class="modal-img" />
+                <div class="modal-details">
+                    <span class="modal-title"></span>
+                    <span class="modal-info"></span>
+                </div>
+            </div>
+
+            <div class="modal-controls">
+                <button class="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+                <button class="next"><i class="fas fa-chevron-right fa-2x"></i></button>
+            </div>
+        </div>
+
+        <div class="loader">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <aside class="aside">
+                <div class="nav-toggler"><span></span></div>
+
+                <div class="logo"><a href="#"> &infintie;DMC&infintie;</a></div>
+
+                <nav class="nav">
+                    <ul class="links-container">
+                        <li class="active" data-section=".home">
+                            <a href="#"><i class="fas fa-home"></i> <span>Home</span></a>
+                        </li>
+
+                        <li data-section=".about">
+                            <a href="#"><i class="fas fa-user"></i> <span>About</span></a>
+                        </li>
+
+                        <li data-section=".services">
+                            <a href="#"><i class="fas fa-list"></i> <span>Services</span></a>
+                        </li>
+
+                        <li data-section=".portfolio">
+                            <a href="#"><i class="fas fa-briefcase"></i> <span>Portfolio</span></a>
+                        </li>
+
+                        <li data-section=".contact">
+                            <a href="#"><i class="fas fa-comments"></i> <span>Contact</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <footer class="copyright">
+                    <p>Copyright &COPY; Hoziefa Alhassan 2020</p>
+                </footer>
+            </aside>
+
+            <div class="main-content">
+                <section class="home section active">
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="intro">
+                                <img src="./images//personal.JPG" alt="profile" />
+                                <h1>Hoziefa Alhassan</h1>
+                                <p>I'm a web developer</p>
+                            </div>
+
+                            <div class="social-icons">
+                                <i class="fab fa-twitter fa-lg"></i>
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                                <i class="fab fa-instagram fa-lg"></i>
+                                <i class="fab fa-linkedin-in fa-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about section">
+                    <header>
+                        <h2>About Me</h2>
+
+                        <h3>I'm Hoziefa Alhassan and I'm a <span>Web Developer</span></h3>
+
+                        <p>
+                            Hi! my name is Hoziefa Alhassan. I am a web developer, and I'm very passionate and dedicated
+                            to my work. With a good experience as a professional web developer. I have acquired the
+                            skills and knowledge necessary to make your projects a success. I enjoy every step of the
+                            design and developing process, form discussion and collaboration.
+                        </p>
+                    </header>
+
+                    <div class="content">
+                        <div class="info">
+                            <div class="col-one">
+                                <p><span>Birthday:</span> 10 january 1997</p>
+                                <p><span>Website:</span> https://github.com/Hoziefa</p>
+                                <p><span>Degree:</span> M.TECH</p>
+                                <p><span>city:</span> Amman</p>
+                            </div>
+
+                            <div class="col-two">
+                                <p><span>age:</span> 24</p>
+                                <p><span>email:</span> hoziefaalhasan@gmail.com</p>
+                                <p><span>phone:</span> +795577777</p>
+                                <p><span>freelance:</span> available</p>
+                            </div>
+
+                            <div class="actions">
+                                <button>Download CV</button>
+                                <button>Hire Me</button>
+                            </div>
+                        </div>
+
+                        <div class="skills">
+                            <div>React</div>
+                            <div>Redux</div>
+                            <div>ES6</div>
+                            <div>Node.JS</div>
+                            <div>JavaScript</div>
+                            <div>Problem Solving</div>
+                            <div>Jquery</div>
+                            <div>Git</div>
+                            <div>MongoDB</div>
+                            <div>Sass</div>
+                            <div>Bootstrap</div>
+                            <div>Html5</div>
+                            <div>Css3</div>
+                        </div>
+
+                        <div class="education-experience">
+                            <div class="education">
+                                <h3>Education</h3>
+
+                                <div class="timeline">
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2016 - 2020 </span>
+
+                                        <div class="title">Master in computer science</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2014 - 2020 </span>
+
+                                        <div class="title">Master in cell-phones Hardware</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2019 - 2020 </span>
+
+                                        <div class="title">IT Network Engineering</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="experience">
+                                <h3>Experience</h3>
+
+                                <div class="timeline">
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2017 - 2020 </span>
+
+                                        <div class="title">Frontend Web Developer</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2018 - 2020 </span>
+
+                                        <div class="title">Android Developer</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-box">
+                                        <span class="date"> <i class="far fa-calendar-alt"></i> 2019 - 2020 </span>
+
+                                        <div class="title">Backend Developer</div>
+
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore et
+                                            voluptatibus accusamus similique veritatis quibusdam in quos alias.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="services section">
+                    <header><h2>services</h2></header>
+
+                    <div class="content">
+                        <div>
+                            <i class="fas fa-laptop fa-2x"></i>
+                            <h5>Web Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+
+                        <div>
+                            <i class="far fa-image fa-2x"></i>
+                            <h5>Photography</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-code fa-2x"></i>
+                            <h5>Web Development</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-film fa-2x"></i>
+                            <h5>Video Editing</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-rocket fa-2x"></i>
+                            <h5>SEO Optimization</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-paint-brush fa-2x"></i>
+                            <h5>Logo Design</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis cumque cum.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="portfolio section">
+                    <header><h2>Portfolio</h2></header>
+
+                    <div class="content">
+                        <ul>
+                            <li class="active" data-category="all">All</li>
+                            <li data-category="web-apps">Web Applications</li>
+                            <li data-category="recipes">Food Recipes</li>
+                            <li data-category="web-games">Web Games</li>
+                            <li data-category="e-commerce">E-commerce</li>
+                        </ul>
+
+                        <div class="categories">
+                            <div class="category web-apps recipes">
+                                <img src="./images/portfolio/forkify.png" alt="forkify" />
+                                <h5>Food Recipes</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category web-apps e-commerce">
+                                <img src="./images/portfolio/budget.png" alt="budget" />
+                                <h5>Web Applications</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category web-apps recipes">
+                                <img src="./images/portfolio/meal-finder.png" alt="meal-finder" />
+                                <h5>Food Recipes</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category e-commerce">
+                                <img src="./images/portfolio/shopping-cart.png" alt="shopping-cart" />
+                                <h5>E-Commerce</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category web-games">
+                                <img src="./images/portfolio/typing-speed.png" alt="typing-speed" />
+                                <h5>Web Games</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category web-games">
+                                <img src="./images/portfolio/hangman.png" alt="hangman" />
+                                <h5>Web Games</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category web-apps">
+                                <img src="./images/portfolio/stick-notes.png" alt="stick-notes" />
+                                <h5>Web Applications</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact section">
+                    <header>
+                        <h2>Contact Me</h2>
+                    </header>
+
+                    <div class="content">
+                        <div class="contact-info">
+                            <div>
+                                <i class="fas fa-phone fa-2x"></i>
+                                <span>Call Me On</span>
+                                <span>+795516507</span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-envelope fa-2x"></i>
+                                <span>E-Mail</span>
+                                <span>hoziefaalhasan@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="form">
+                            <form>
+                                <div class="wrapper">
+                                    <div class="field">
+                                        <input type="text" name="name" required autocomplete="off" />
+                                        <label>name</label>
+                                    </div>
+
+                                    <div class="field">
+                                        <input type="text" name="email" required autocomplete="off" />
+                                        <label>email</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <input type="text" name="subject" required autocomplete="off" />
+                                    <label>subject</label>
+                                </div>
+
+                                <div class="field">
+                                    <textarea name="message" required></textarea>
+                                    <label>message</label>
+                                </div>
+
+                                <button type="submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
