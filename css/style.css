@@ -320,6 +320,7 @@ button:disabled {
   transition: color 0.3s;
 }
 
+.settings-box .toggle-display i.fa-spin,
 .settings-box .toggle-display:hover {
   color: var(--primary-color);
 }
