@@ -21,10 +21,17 @@ let currentSlide = 0,
 const removeClassAttr = (list, ...[cls = "active", ...rest]) =>
     Array.from(list, item => item.classList.remove(cls, ...rest));
 
-const changeSlidesDetails = (target, slide, slideTitle = elements.currentSlideTitle) => {
+const changeSlidesDetails = (
+    target,
+    slide,
+    anchor = elements.modalContainer.querySelector("a"),
+    slideTitle = elements.currentSlideTitle,
+) => {
     slide.src = target.src;
 
     slide.alt = target.alt;
+
+    anchor.href = target.dataset.link;
 
     slideTitle.textContent = target.parentElement.querySelector("h5").textContent.trim();
 };
