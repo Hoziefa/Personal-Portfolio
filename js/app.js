@@ -81,13 +81,11 @@ const slideNavigation = (direction, slides) => {
 };
 
 const handleSectionsNavigation = ({ target }) => {
-    if (!target.matches("li")) return;
-
     const allLinks = Array.from(target.parentElement.querySelectorAll("li"));
-
     const allSections = elements.mainContent.querySelectorAll(".section");
-
     const activeSection = document.querySelector(target.dataset.section);
+
+    if (!target.matches("li") || allLinks.indexOf(target) === lastIndexOf) return;
 
     removeClassAttr(allLinks);
 
