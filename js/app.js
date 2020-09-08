@@ -14,18 +14,25 @@ const elements = {
     loader: document.querySelector(".loader"),
 };
 
-let currentSlide = 0;
-let timeout;
+let currentSlide = 0,
+    timeout,
+    lastIndexOf = 0;
 
 const removeClassAttr = (list, ...[cls = "active", ...rest]) =>
     Array.from(list, item => item.classList.remove(cls, ...rest));
 
-const changeSlidesDetails = (target, slide, slideTitle) => {
+const changeSlidesDetails = (target, slide, slideTitle = elements.currentSlideTitle) => {
     slide.src = target.src;
 
     slide.alt = target.alt;
 
     slideTitle.textContent = target.parentElement.querySelector("h5").textContent.trim();
+};
+
+const handleToggleDisplaySettingsBox = ({ currentTarget }) => {
+    currentTarget.firstElementChild.classList.toggle("fa-spin");
+
+    currentTarget.parentElement.classList.toggle("show");
 };
 
 const handleColorsChange = ({ target = elements.colorsContainer.firstElementChild }) => {
@@ -38,7 +45,17 @@ const handleColorsChange = ({ target = elements.colorsContainer.firstElementChil
     document.documentElement.style.setProperty("--primary-color", getComputedStyle(target).backgroundColor);
 };
 
-const handleSliding = (direction, slides) => {
+const handleThemeChange = ({ target }) => {
+    removeClassAttr(target.parentElement.children);
+
+    target.classList.add("active");
+
+    target.classList.contains("dark-theme")
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+};
+
+const slideNavigation = (direction, slides) => {
     const modal = elements.modalContainer.querySelector(".modal-content");
 
     if (direction === "prev") currentSlide === 0 ? (currentSlide = slides.length - 1) : currentSlide--;
@@ -51,61 +68,45 @@ const handleSliding = (direction, slides) => {
 
     timeout = setTimeout(() => modal.classList.remove(direction), 300);
 
-    changeSlidesDetails(slides[currentSlide], elements.modalContainer.querySelector("img"), elements.currentSlideTitle);
+    changeSlidesDetails(slides[currentSlide], elements.modalContainer.querySelector("img"));
 
     elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
 
-window.onload = () => setTimeout(() => elements.loader.classList.add("active"), 1000);
-
-elements.toggleDisplayBtn.addEventListener("click", ({ currentTarget }) => {
-    currentTarget.firstElementChild.classList.toggle("fa-spin");
-
-    currentTarget.parentElement.classList.toggle("show");
-});
-
-handleColorsChange({});
-elements.colorsContainer.addEventListener("click", handleColorsChange);
-
-elements.themesContainer.addEventListener("click", ({ target }) => {
-    if (target.classList.contains("dark-theme")) {
-        removeClassAttr(target.parentElement.children);
-
-        target.classList.add("active");
-
-        document.documentElement.classList.add("dark");
-    } else {
-        removeClassAttr(target.parentElement.children);
-
-        target.classList.add("active");
-
-        document.documentElement.classList.remove("dark");
-    }
-});
-
-elements.navLinks.addEventListener("click", ({ target }) => {
+const handleSectionsNavigation = ({ target }) => {
     if (!target.matches("li")) return;
 
     const allLinks = Array.from(target.parentElement.querySelectorAll("li"));
 
+    const allSections = elements.mainContent.querySelectorAll(".section");
+
     const activeSection = document.querySelector(target.dataset.section);
 
-    const allSections = elements.mainContent.querySelectorAll(".section");
+    removeClassAttr(allLinks);
 
     removeClassAttr(allSections, "active", "prev-section");
 
-    allLinks.forEach((li, idx) => {
-        li.classList.contains("active") && allSections[idx].classList.add("prev-section");
+    target.classList.add("active");
 
-        li.classList.remove("active");
-    });
+    removeClassAttr(allSections, "active-back", "pre-active");
 
-    [target, activeSection].forEach(domElm => domElm.classList.add("active"));
-});
+    if (allLinks.indexOf(target) > lastIndexOf) {
+        activeSection.classList.add("active");
 
-elements.navTogglerBtn.addEventListener("click", () => elements.asideSection.classList.toggle("show"));
+        allSections[lastIndexOf].classList.add("prev-section");
+    } else {
+        activeSection.classList.add("pre-active");
+        allSections[lastIndexOf].classList.add("active-back");
+    }
 
-elements.categoriesNavigator.addEventListener("click", ({ target }) => {
+    allSections[lastIndexOf].addEventListener("animationend", ({ currentTarget }) =>
+        currentTarget.classList.add("prev-section"),
+    );
+
+    lastIndexOf = allLinks.indexOf(target);
+};
+
+const handleFilteringCategories = ({ target }) => {
     if (!target.matches("li, li *")) return;
 
     const categories = document.querySelectorAll(".category");
@@ -122,35 +123,56 @@ elements.categoriesNavigator.addEventListener("click", ({ target }) => {
         });
     }
 
-    categories.forEach(domElm => domElm.classList.add("hide"));
-    categories.forEach(domElm => domElm.classList.remove("show"));
+    categories.forEach(domElm => {
+        domElm.classList.add("hide");
+        domElm.classList.remove("show");
+    });
 
     document.querySelectorAll(`.${category}`).forEach(domElm => {
         domElm.classList.remove("hide");
         domElm.classList.add("show");
     });
-});
+};
 
-elements.slidesContainer.addEventListener("click", ({ target }) => {
+const handleDisplaySliderDetails = ({ target }) => {
     const slides = Array.from(elements.slidesContainer.querySelectorAll(".category:not(.hide) img"));
 
     if (!target.matches("img")) return;
 
-    changeSlidesDetails(target, elements.modalContainer.querySelector("img"), elements.currentSlideTitle);
+    changeSlidesDetails(target, elements.modalContainer.querySelector("img"));
 
     elements.modalContainer.classList.add("show");
 
     currentSlide = slides.indexOf(target);
 
     elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
-});
+};
 
-elements.modalContainer.addEventListener("click", ({ currentTarget, target }) => {
+const handleSlideNavigation = ({ currentTarget, target }) => {
     const slides = elements.slidesContainer.querySelectorAll(".category:not(.hide) img");
 
     if (target.matches(`.${currentTarget.classList[0]}, .close-btn`)) return currentTarget.classList.remove("show");
 
-    target.matches(".prev") && handleSliding("prev", slides);
+    target.matches(".prev") && slideNavigation("prev", slides);
 
-    target.matches(".next") && handleSliding("next", slides);
-});
+    target.matches(".next") && slideNavigation("next", slides);
+};
+
+elements.toggleDisplayBtn.addEventListener("click", handleToggleDisplaySettingsBox);
+
+handleColorsChange({});
+elements.colorsContainer.addEventListener("click", handleColorsChange);
+
+elements.themesContainer.addEventListener("click", handleThemeChange);
+
+elements.navLinks.addEventListener("click", handleSectionsNavigation);
+
+elements.navTogglerBtn.addEventListener("click", () => elements.asideSection.classList.toggle("show"));
+
+elements.categoriesNavigator.addEventListener("click", handleFilteringCategories);
+
+elements.slidesContainer.addEventListener("click", handleDisplaySliderDetails);
+
+elements.modalContainer.addEventListener("click", handleSlideNavigation);
+
+window.onload = () => setTimeout(() => elements.loader.classList.add("active"), 1000);

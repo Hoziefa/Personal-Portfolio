@@ -246,6 +246,16 @@ button:disabled {
           animation: slideSection 1s;
 }
 
+.section.pre-active {
+  z-index: 2;
+}
+
+.section.active-back {
+  z-index: 2;
+  -webkit-animation: slideSectionBack 1s;
+          animation: slideSectionBack 1s;
+}
+
 .section.prev-section {
   z-index: 1;
 }
@@ -269,6 +279,28 @@ button:disabled {
   to {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideSectionBack {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes slideSectionBack {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 
