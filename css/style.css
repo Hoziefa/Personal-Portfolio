@@ -251,7 +251,6 @@ button:disabled {
 }
 
 .section.active-back {
-  z-index: 2;
   -webkit-animation: slideSectionBack 1s;
           animation: slideSectionBack 1s;
 }
@@ -283,13 +282,21 @@ button:disabled {
 }
 
 @-webkit-keyframes slideSectionBack {
-  from {
+  0% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    z-index: 2;
+
   }
-  to {
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    z-index: 1;
   }
 }
 
@@ -297,10 +304,17 @@ button:disabled {
   from {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+    z-index: 2;
   }
-  to {
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    z-index: 1;
   }
 }
 

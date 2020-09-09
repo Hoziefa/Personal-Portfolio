@@ -89,11 +89,9 @@ const handleSectionsNavigation = ({ target }) => {
 
     removeClassAttr(allLinks);
 
-    removeClassAttr(allSections, "active", "prev-section");
+    removeClassAttr(allSections, "active", "prev-section", "active-back", "pre-active");
 
     target.classList.add("active");
-
-    removeClassAttr(allSections, "active-back", "pre-active");
 
     if (allLinks.indexOf(target) > lastIndexOf) {
         activeSection.classList.add("active");
@@ -101,12 +99,9 @@ const handleSectionsNavigation = ({ target }) => {
         allSections[lastIndexOf].classList.add("prev-section");
     } else {
         activeSection.classList.add("pre-active");
+
         allSections[lastIndexOf].classList.add("active-back");
     }
-
-    allSections[lastIndexOf].addEventListener("animationend", ({ currentTarget }) =>
-        currentTarget.classList.add("prev-section"),
-    );
 
     lastIndexOf = allLinks.indexOf(target);
 };
