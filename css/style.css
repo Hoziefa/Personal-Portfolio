@@ -1209,10 +1209,6 @@ section.about .content .skills div {
   border: 1px solid var(--dark-border);
 }
 
-section.about .content .skills div:last-of-type {
-  grid-column: 1 / -1;
-}
-
 @media (max-width: 1200px) {
   section.about .content .skills {
     -webkit-box-flex: 1;
