@@ -13,7 +13,7 @@
   src: url(../fonts/Action_Man.ttf);
 
   font-family: "Intro Rust G Base 2 Line";
-  src: url(../fonts/IntroRustG-Base2Line.otf);
+  src: url(../fonts/IntroRustG-Base2Line.otf) format("opentype");
 }
 
 
