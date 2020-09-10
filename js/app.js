@@ -104,6 +104,8 @@ const handleSectionsNavigation = ({ target }) => {
     }
 
     lastIndexOf = allLinks.indexOf(target);
+
+    elements.asideSection.classList.contains("show") && elements.asideSection.classList.remove("show");
 };
 
 const handleFilteringCategories = ({ target }) => {
@@ -167,7 +169,11 @@ elements.themesContainer.addEventListener("click", handleThemeChange);
 
 elements.navLinks.addEventListener("click", handleSectionsNavigation);
 
-elements.navTogglerBtn.addEventListener("click", () => elements.asideSection.classList.toggle("show"));
+elements.navTogglerBtn.addEventListener("click", ({ currentTarget }) => {
+    currentTarget.classList.toggle("active");
+
+    elements.asideSection.classList.toggle("show");
+});
 
 elements.categoriesNavigator.addEventListener("click", handleFilteringCategories);
 

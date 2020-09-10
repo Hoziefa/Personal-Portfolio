@@ -811,15 +811,27 @@ button:disabled {
   border: 1px solid var(--dark-border);
   cursor: pointer;
   z-index: 6;
+  transition: background-color 0.4s;
   display: none;
+}
+
+.aside .nav-toggler:hover,
+.aside .nav-toggler.active {
+  background-color: var(--primary-color);
+}
+
+.aside .nav-toggler:hover span,
+.aside .nav-toggler.active span {
+  background-color: var(--light-bg);
 }
 
 .aside .nav-toggler span {
   display: inline-block;
   width: 16px;
-  height: 2px;
+  height: 3px;
   background-color: var(--primary-color);
   position: relative;
+  transition: 0.4s;
 }
 
 .aside .nav-toggler span::before, .aside .nav-toggler span::after {
@@ -829,6 +841,7 @@ button:disabled {
   height: inherit;
   background-color: inherit;
   position: absolute;
+  transition: transform 0.4s;
 }
 
 .aside .nav-toggler span::before {
@@ -839,6 +852,18 @@ button:disabled {
 .aside .nav-toggler span::after {
   bottom: -7px;
   left: 0;
+}
+
+.aside .nav-toggler.active span {
+  max-height: 0;
+}
+
+.aside .nav-toggler.active span::before {
+  transform: translateY(6px) rotate(40deg);
+}
+
+.aside .nav-toggler.active span::after {
+  transform: translateY(-5px) rotate(-40deg);
 }
 
 .aside .logo {
@@ -1253,7 +1278,7 @@ section.about .content .education-experience .experience .timeline::before {
   top: 40px;
   left: 20px;
   width: 2px;
-  height: calc(100% - 4rem);
+  height: calc(100% - 80px);
   background-color: var(--primary-color);
   border-radius: 20px;
 }
