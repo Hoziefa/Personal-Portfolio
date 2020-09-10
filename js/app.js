@@ -105,7 +105,10 @@ const handleSectionsNavigation = ({ target }) => {
 
     lastIndexOf = allLinks.indexOf(target);
 
-    elements.asideSection.classList.contains("show") && elements.asideSection.classList.remove("show");
+    if (elements.asideSection.classList.contains("show")) {
+        elements.navTogglerBtn.classList.remove("active");
+        elements.asideSection.classList.remove("show");
+    }
 };
 
 const handleFilteringCategories = ({ target }) => {
