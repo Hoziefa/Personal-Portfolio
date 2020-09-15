@@ -638,15 +638,16 @@ button:disabled {
   padding: 0.75rem;
   -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
   transition: color 0.3s ease-out, background-color 0.3s ease-out;
-  border-radius: 5px;
 }
 
 .modal-overlay .modal-controls button.prev {
   left: 5%;
+  border-radius: 10px 0 0 10px;
 }
 
 .modal-overlay .modal-controls button.next {
   right: 5%;
+  border-radius: 0 10px 10px 0;
 }
 
 .modal-overlay .modal-controls button:hover {
