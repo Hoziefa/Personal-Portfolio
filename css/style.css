@@ -633,7 +633,7 @@ button:disabled {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: white;
+  background-color: var(--light-bg);
   color: var(--primary-color);
   padding: 0.75rem;
   -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
@@ -650,7 +650,7 @@ button:disabled {
 }
 
 .modal-overlay .modal-controls button:hover {
-  color: white;
+  color: var(--light-bg);
   background-color: var(--primary-color);
 }
 
