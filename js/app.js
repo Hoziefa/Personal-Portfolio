@@ -1,6 +1,6 @@
 const elements = {
     mainContent: document.querySelector(".main-content"),
-    toggleDisplayBtn: document.querySelector(".toggle-display"),
+    toggleDisplaySettingsBoxBtn: document.querySelector(".toggle-display"),
     colorsContainer: document.querySelector(".colors-container"),
     themesContainer: document.querySelector(".theme-modes"),
     asideSection: document.querySelector(".aside"),
@@ -34,10 +34,22 @@ const changeSlidesDetails = (
     slideTitle.textContent = target.parentElement.querySelector("h5").textContent.trim();
 };
 
-const handleToggleDisplaySettingsBox = ({ currentTarget }) => {
-    currentTarget.firstElementChild.classList.toggle("fa-spin");
+const slideNavigation = (direction, slides) => {
+    const modal = elements.modalContainer.querySelector(".modal-content");
 
-    currentTarget.parentElement.classList.toggle("show");
+    if (direction === "prev") currentSlide === 0 ? (currentSlide = slides.length - 1) : currentSlide--;
+
+    if (direction === "next") currentSlide === slides.length - 1 ? (currentSlide = 0) : currentSlide++;
+
+    modal.classList.add(direction);
+
+    timeout && clearTimeout(timeout);
+
+    timeout = setTimeout(() => modal.classList.remove(direction), 300);
+
+    changeSlidesDetails(slides[currentSlide]);
+
+    elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
 
 const handleColorsChange = ({ target = elements.colorsContainer.firstElementChild }) => {
@@ -58,24 +70,6 @@ const handleThemeChange = ({ target }) => {
     target.classList.contains("dark-theme")
         ? document.documentElement.classList.add("dark")
         : document.documentElement.classList.remove("dark");
-};
-
-const slideNavigation = (direction, slides) => {
-    const modal = elements.modalContainer.querySelector(".modal-content");
-
-    if (direction === "prev") currentSlide === 0 ? (currentSlide = slides.length - 1) : currentSlide--;
-
-    if (direction === "next") currentSlide === slides.length - 1 ? (currentSlide = 0) : currentSlide++;
-
-    modal.classList.add(direction);
-
-    timeout && clearTimeout(timeout);
-
-    timeout = setTimeout(() => modal.classList.remove(direction), 300);
-
-    changeSlidesDetails(slides[currentSlide]);
-
-    elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
 
 const handleSectionsNavigation = ({ target }) => {
@@ -161,7 +155,11 @@ const handleSlideNavigation = ({ currentTarget, target }) => {
     target.matches(".next") && slideNavigation("next", slides);
 };
 
-elements.toggleDisplayBtn.addEventListener("click", handleToggleDisplaySettingsBox);
+elements.toggleDisplaySettingsBoxBtn.addEventListener("click", ({ currentTarget }) => {
+    currentTarget.firstElementChild.classList.toggle("fa-spin");
+
+    currentTarget.parentElement.classList.toggle("show");
+});
 
 handleColorsChange({});
 elements.colorsContainer.addEventListener("click", handleColorsChange);
