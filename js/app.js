@@ -11,8 +11,9 @@ const elements = {
     currentSlideTitle: document.querySelector(".modal-title"),
     slidesLength: document.querySelector(".modal-info"),
     modalContainer: document.querySelector(".modal-overlay"),
-    loader: document.querySelector(".loader"),
     modalImg: document.querySelector(".modal-overlay img"),
+    modalLink: document.querySelector(".modal-overlay a"),
+    loader: document.querySelector(".loader"),
 };
 
 let currentSlide = 0,
@@ -24,15 +25,11 @@ const removeClassAttr = (list, ...[cls = "active", ...rest]) =>
 
 const changeSlidesDetails = (
     target,
-    slide,
-    anchor = elements.modalContainer.querySelector("a"),
+    slide = elements.modalImg,
+    link = elements.modalLink,
     slideTitle = elements.currentSlideTitle,
 ) => {
-    slide.src = target.src;
-
-    slide.alt = target.alt;
-
-    anchor.href = target.dataset.link;
+    [slide.src, slide.alt, link.href] = [target.src, target.alt, target.dataset.link];
 
     slideTitle.textContent = target.parentElement.querySelector("h5").textContent.trim();
 };
@@ -76,7 +73,7 @@ const slideNavigation = (direction, slides) => {
 
     timeout = setTimeout(() => modal.classList.remove(direction), 300);
 
-    changeSlidesDetails(slides[currentSlide], elements.modalImg);
+    changeSlidesDetails(slides[currentSlide]);
 
     elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
@@ -145,7 +142,7 @@ const handleDisplaySliderDetails = ({ target }) => {
 
     if (!target.matches("img")) return;
 
-    changeSlidesDetails(target, elements.modalImg);
+    changeSlidesDetails(target);
 
     elements.modalContainer.classList.add("show");
 
