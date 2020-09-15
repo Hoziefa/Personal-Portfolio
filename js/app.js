@@ -12,6 +12,7 @@ const elements = {
     slidesLength: document.querySelector(".modal-info"),
     modalContainer: document.querySelector(".modal-overlay"),
     loader: document.querySelector(".loader"),
+    modalImg: document.querySelector(".modal-overlay img"),
 };
 
 let currentSlide = 0,
@@ -75,7 +76,7 @@ const slideNavigation = (direction, slides) => {
 
     timeout = setTimeout(() => modal.classList.remove(direction), 300);
 
-    changeSlidesDetails(slides[currentSlide], elements.modalContainer.querySelector("img"));
+    changeSlidesDetails(slides[currentSlide], elements.modalImg);
 
     elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
@@ -144,7 +145,7 @@ const handleDisplaySliderDetails = ({ target }) => {
 
     if (!target.matches("img")) return;
 
-    changeSlidesDetails(target, elements.modalContainer.querySelector("img"));
+    changeSlidesDetails(target, elements.modalImg);
 
     elements.modalContainer.classList.add("show");
 
