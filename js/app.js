@@ -185,4 +185,4 @@ elements.slidesContainer.addEventListener("click", handleDisplaySliderDetails);
 
 elements.modalContainer.addEventListener("click", handleSlideNavigation);
 
-window.onload = () => setTimeout(() => elements.loader.classList.add("active"), 1000);
+window.onload = () => elements.loader.classList.add("active");
