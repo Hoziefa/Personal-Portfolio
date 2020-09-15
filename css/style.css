@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 
 @font-face {
   font-family: "Comic Sans MS";
@@ -566,8 +567,9 @@ button:disabled {
 
 .modal-overlay .modal-content .modal-details {
   position: absolute;
-  bottom: -10%;
+  bottom: 0;
   left: 0;
+  transform: translateY(100%);
   width: 100%;
   padding: 1rem;
   display: -webkit-box;
@@ -581,7 +583,14 @@ button:disabled {
           align-items: center;
   background-color: var(--primary-color);
   color: var(--light-bg);
-  font-weight: 600;
+}
+
+.modal-overlay .modal-content .modal-details .modal-title {
+  font: 600 1.25rem "Oswald", sans-serif;
+} 
+
+.modal-overlay .modal-content .modal-details .modal-info {
+  font: 700 1rem "Montserrat", sans-serif;
 }
 
 @-webkit-keyframes prev {
@@ -1537,9 +1546,8 @@ section.portfolio .content .categories .category h5 {
   top: 5%;
   left: 5%;
   color: white;
-  font-size: 1.25rem;
   text-transform: capitalize;
-  font-family: "raleway";
+  font: 500 1.25rem "Oswald", sans-serif;
   z-index: 1;
   -webkit-transform: translateX(-200%);
           transform: translateX(-200%);
