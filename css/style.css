@@ -1217,7 +1217,7 @@ section.about .content .skills div {
   height: -moz-max-content;
   height: max-content;
   padding: 1rem;
-  font: 900 1.2rem "Action Man", sans-serif;
+  font: 900 1.1rem "Action Man", sans-serif;
   text-transform: capitalize;
   background-color: var(--light-bg);
   color: var(--primary-color);
