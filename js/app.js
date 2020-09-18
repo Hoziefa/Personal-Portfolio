@@ -18,7 +18,7 @@ const elements = {
 
 let currentSlide = 0,
     timeout,
-    lastIndexOf = 0;
+    lastLinkIndex = 0;
 
 const removeClassAttr = (list, ...[cls = "active", ...rest]) =>
     Array.from(list, item => item.classList.remove(cls, ...rest));
@@ -77,7 +77,9 @@ const handleSectionsNavigation = ({ target }) => {
     const allSections = elements.mainContent.querySelectorAll(".section");
     const activeSection = document.querySelector(target.dataset.section);
 
-    if (!target.matches("li") || allLinks.indexOf(target) === lastIndexOf) return;
+    let currentLinkIndex = allLinks.indexOf(target);
+
+    if (!target.matches("li") || currentLinkIndex === lastLinkIndex) return;
 
     removeClassAttr(allLinks);
 
@@ -85,17 +87,17 @@ const handleSectionsNavigation = ({ target }) => {
 
     target.classList.add("active");
 
-    if (allLinks.indexOf(target) > lastIndexOf) {
+    if (currentLinkIndex > lastLinkIndex) {
         activeSection.classList.add("active");
 
-        allSections[lastIndexOf].classList.add("prev-section");
+        allSections[lastLinkIndex].classList.add("prev-section");
     } else {
         activeSection.classList.add("pre-active");
 
-        allSections[lastIndexOf].classList.add("active-back");
+        allSections[lastLinkIndex].classList.add("active-back");
     }
 
-    lastIndexOf = allLinks.indexOf(target);
+    lastLinkIndex = currentLinkIndex;
 
     if (elements.asideSection.classList.contains("show")) {
         elements.navTogglerBtn.classList.remove("active");
