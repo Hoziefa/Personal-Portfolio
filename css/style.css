@@ -586,7 +586,8 @@ button:disabled {
 }
 
 .modal-overlay .modal-content .modal-details .modal-title {
-  font: 600 1.25rem "Oswald", sans-serif;
+  font: 500 1.25rem "Oswald", sans-serif;
+  text-transform: capitalize;
 } 
 
 .modal-overlay .modal-content .modal-details .modal-info {
@@ -1446,6 +1447,7 @@ section.portfolio .content ul li {
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  margin-bottom: 1rem;
 }
 
 section.portfolio .content ul li:not(:last-of-type) {
