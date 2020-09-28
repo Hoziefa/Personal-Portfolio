@@ -3,6 +3,7 @@ const elements = {
     toggleDisplaySettingsBoxBtn: document.querySelector(".toggle-display"),
     colorsContainer: document.querySelector(".colors-container"),
     themesContainer: document.querySelector(".theme-modes"),
+    personalColorInput: document.getElementById("personal-color"),
     asideSection: document.querySelector(".aside"),
     navTogglerBtn: document.querySelector(".nav-toggler"),
     navLinks: document.querySelector(".links-container"),
@@ -18,7 +19,8 @@ const elements = {
 
 let currentSlide = 0,
     timeout,
-    lastLinkIndex = 0;
+    lastLinkIndex = 0,
+    defaultColor = getComputedStyle(elements.colorsContainer.firstElementChild).backgroundColor || "";
 
 const removeClassAttr = (list, ...[cls = "active", ...rest]) =>
     Array.from(list, item => item.classList.remove(cls, ...rest));
@@ -52,6 +54,21 @@ const slideNavigation = (direction, slides) => {
     elements.slidesLength.textContent = `${currentSlide + 1} OF ${slides.length}`;
 };
 
+const rgbToHex = rgb => {
+    rgb = rgb.replace(/[( rgb )]/g, "");
+
+    let [r, g, b] = rgb
+        .split(",")
+        .map(Number)
+        .map(c => {
+            c = c.toString(16);
+
+            return c.length === 1 ? `0${c}` : c;
+        });
+
+    return `#${r}${g}${b}`;
+};
+
 const handleColorsChange = ({ target = elements.colorsContainer.firstElementChild }) => {
     if (!target.matches("li, li *")) return;
 
@@ -59,7 +76,11 @@ const handleColorsChange = ({ target = elements.colorsContainer.firstElementChil
 
     target.classList.add("active");
 
-    document.documentElement.style.setProperty("--primary-color", getComputedStyle(target).backgroundColor);
+    let pickedColor = getComputedStyle(target).backgroundColor;
+
+    document.documentElement.style.setProperty("--primary-color", pickedColor);
+
+    elements.personalColorInput.value = rgbToHex(pickedColor);
 };
 
 const handleThemeChange = ({ target }) => {
@@ -181,5 +202,11 @@ elements.categoriesNavigator.addEventListener("click", handleFilteringCategories
 elements.slidesContainer.addEventListener("click", handleDisplaySliderDetails);
 
 elements.modalContainer.addEventListener("click", handleSlideNavigation);
+
+elements.personalColorInput.value = rgbToHex(defaultColor);
+
+elements.personalColorInput.addEventListener("input", ({ target: { value = defaultColor } }) => {
+    document.documentElement.style.setProperty("--primary-color", value);
+});
 
 window.onload = () => elements.loader.classList.add("active");

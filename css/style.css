@@ -357,6 +357,10 @@ button:disabled {
           transform: translateX(0);
 }
 
+.settings-box > div:not(.toggle-display):not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
 .settings-box .toggle-display {
   position: absolute;
   top: 50%;
@@ -438,8 +442,24 @@ button:disabled {
           transform: scale(1.5);
 }
 
-.settings-box .theme-modes {
-  margin-top: 1rem;
+.personal-color {
+  text-align: center;
+}
+
+.personal-color i {
+  font-size: 1.5rem;
+}
+
+.personal-color input[type="color"] {
+  cursor: pointer;
+  width: 50%;
+  height: 25px;
+  outline: 3px double var(--primary-color) !important;
+	-webkit-appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
 }
 
 .settings-box .theme-modes .theme-controls {
