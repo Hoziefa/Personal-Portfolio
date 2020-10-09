@@ -563,7 +563,8 @@ input[type="color"]::-webkit-color-swatch {
     background-color: white;
     position: relative;
     width: 500px;
-    height: 400px;
+    height: 80vh;
+    margin-top: -10vh;
 }
 
 @media (max-width: 600px) {
