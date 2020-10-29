@@ -44,10 +44,41 @@
         <div class="modal-overlay">
             <div class="modal-content">
                 <div class="close-btn"><i class="fas fa-times"></i></div>
-                <a href="" target="_blank"><img src="" alt="modal" class="modal-img" /></a>
+
+                <div class="image-container">
+                    <img src="" alt="modal" class="modal-img" />
+                </div>
+
                 <div class="modal-details">
-                    <span class="modal-title"></span>
-                    <span class="modal-info"></span>
+                    <div class="modal-details-header">
+                        <span class="modal-title" id="modal-details-header-title"></span>
+                        <span class="icon"><i class="fas fa-angle-up"></i></span>
+                        <span class="modal-info"></span>
+                    </div>
+
+                    <div class="modal-details-body">
+                        <div class="modal-details-body-box">
+                            <h3 class="modal-details-body-title" id="modal-details-body-title"></h3>
+
+                            <p class="modal-details-body-desc" id="modal-details-body-desc"></p>
+
+                            <p class="modal-details-body-desc" id="modal-details-body-tools"></p>
+
+                            <p class="modal-details-body-keys" id="modal-details-body-tags"></p>
+
+                            <div class="modal-details-body-action">
+                                <!-- <a class="btn btn-border" href="" target="_blank" id="code-link">
+                                    <i class="fas fa-code"></i>
+                                    Code
+                                </a> -->
+
+                                <a class="btn btn-border" href="" target="_blank" id="website-link">
+                                    <i class="fas fa-link"></i>
+                                    Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -320,161 +351,222 @@
                         </ul>
 
                         <div class="categories">
-                            <div class="category web-apps latest-projects">
+                            <div class="category full-size web-apps latest-projects">
+                                <img
+                                    src="./images/portfolio/waves.png"
+                                    alt="waves"
+                                    data-linkto="https://waves-wave.herokuapp.com/"
+                                    data-description="The best and most featured e-commerce app. With Incredible Dashboard."
+                                    data-tools="<br/> <strong>client:</strong> React, React-Hooks, React-Router-Dom, React-Redux, Redux, Redux-form, axios, material-ui, sass. <br/> <strong>server:</strong> Node, Express, jsonwebtoken, MongoDB, mongoose."
+                                    data-tags="react redux react-router-dom react-hooks node express mongoDB mongoose"
+                                />
+                                <h5>waves</h5>
+                                <i class="fas fa-search fa-lg"></i>
+                            </div>
+
+                            <div class="category full-size web-apps latest-projects">
                                 <img
                                     src="./images/portfolio/m_city.png"
                                     alt="manchester city"
-                                    data-link="https://m-city-dde92.web.app/"
+                                    data-linkTo="https://m-city-dde92.web.app/"
+                                    data-description="The best Manchester City app. With a great and nice-looking UI. Easy-to-use, and nicely designed dashboard."
+                                    data-tools="<br/> <strong>client:</strong> React, React-Hooks, React-Context-Api, React-Router-Dom, material-ui. <br/> <strong>server:</strong> RealTime Database Firebase, Firebase Storage, Firebase Authentication, Firebase for Hoisting."
+                                    data-tags="react react-context-api react-hooks react-router-dom material-ui firebase"
                                 />
                                 <h5>manchester city</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps latest-projects">
+                            <div class="category full-size web-apps latest-projects">
                                 <img
                                     src="./images/portfolio/hotel-reservation.png"
                                     alt="hotel-reservation"
-                                    data-link="https://dmchotelreservation.netlify.app/"
+                                    data-linkTo="https://dmchotelreservation.netlify.app/"
+                                    data-description="is hotel rooms reservation app."
+                                    data-tools=""
+                                    data-tags="react react-hooks react-context-api sass"
                                 />
                                 <h5>hotel reservation</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category e-commerce latest-projects">
+                            <div class="category full-size e-commerce latest-projects">
                                 <img
                                     src="./images/portfolio/phone-store.png"
                                     alt="phone-store"
-                                    data-link="https://hphonestore.netlify.app/"
+                                    data-linkTo="https://hphonestore.netlify.app/"
+                                    data-description="Shop and get your favorite phone online."
+                                    data-tools=""
+                                    data-tags="react react-hooks react-context-api sass"
                                 />
                                 <h5>Phone Store</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category recipes latest-projects">
+                            <div class="category full-size recipes latest-projects">
                                 <img
                                     src="./images/portfolio/forkify.png"
                                     alt="forkify"
-                                    data-link="https://hoziefa.github.io/Forkify/"
+                                    data-linkTo="https://hoziefa.github.io/Forkify/"
+                                    data-description="Get your favorite food online"
+                                    data-tools=""
+                                    data-tags="html sass webpack babel vanilla-js"
                                 />
                                 <h5>Forkify</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps latest-projects">
+                            <div class="category full-size web-apps latest-projects">
                                 <img
                                     src="./images/portfolio/budget.png"
                                     alt="budget"
-                                    data-link="https://hoziefa.github.io/Budget/"
+                                    data-linkTo="https://hoziefa.github.io/Budget/"
+                                    data-description="Stay attentive to your budget"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Budget</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category recipes">
+                            <div class="category full-size recipes">
                                 <img
                                     src="./images/portfolio/meal-finder.png"
                                     alt="meal-finder"
-                                    data-link="https://hoziefa.github.io/Meal-Finder/"
+                                    data-linkTo="https://hoziefa.github.io/Meal-Finder/"
+                                    data-description="Search for your favorite Meal"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js fetch-api"
                                 />
                                 <h5>Meal Finder</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category e-commerce">
+                            <div class="category full-size e-commerce">
                                 <img
                                     src="./images/portfolio/shopping-cart.png"
                                     alt="shopping-cart"
-                                    data-link="https://hoziefa.github.io/Shopping-cart/"
+                                    data-linkTo="https://hoziefa.github.io/Shopping-cart/"
+                                    data-description="is a furniture shopping app"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js fetch-api"
                                 />
                                 <h5>Shopping Cart</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-games">
+                            <div class="category full-size web-games">
                                 <img
                                     src="./images/portfolio/typing-speed.png"
                                     alt="typing-speed"
-                                    data-link="https://hoziefa.github.io/Typing-Game/"
+                                    data-linkTo="https://hoziefa.github.io/Typing-Game/"
+                                    data-description="Test your typing speed in a funny game"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Typing Game</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-games">
+                            <div class="category full-size web-games">
                                 <img
                                     src="./images/portfolio/hangman.png"
                                     alt="hangman"
-                                    data-link="https://hoziefa.github.io/Hangman-game/"
+                                    data-linkTo="https://hoziefa.github.io/Hangman-game/"
+                                    data-description="Have fun with a nice hangman game"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js fetch-api"
                                 />
                                 <h5>Hangman Game</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/stick-notes.png"
                                     alt="stick-notes"
-                                    data-link="https://hoziefa.github.io/Stick-it-Notes/"
+                                    data-linkTo="https://hoziefa.github.io/Stick-it-Notes/"
+                                    data-description=""
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Stick-it Notes</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-games">
+                            <div class="category full-size web-games">
                                 <img
                                     src="./images/portfolio/breakout.png"
                                     alt="breakout"
-                                    data-link="https://hoziefa.github.io/Breakout-Game/"
+                                    data-linkTo="https://hoziefa.github.io/Breakout-Game/"
+                                    data-description="Have fun with a nice Breakout Game."
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Breakout Game</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/q-a-memory-cards.png"
                                     alt="Q-A-Memory-Cards"
-                                    data-link="https://hoziefa.github.io/Q-A-Memory-Cards/"
+                                    data-linkTo="https://hoziefa.github.io/Q-A-Memory-Cards/"
+                                    data-description=""
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Q-A Memory Cards</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/speech-text-reader.png"
                                     alt="Speech-Text-Reader"
-                                    data-link="https://hoziefa.github.io/Speech-Text-Reader/"
+                                    data-linkTo="https://hoziefa.github.io/Speech-Text-Reader/"
+                                    data-description=""
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Speech Text Reader</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/relaxer-app.png"
                                     alt="Relaxer-App"
-                                    data-link="https://hoziefa.github.io/Relaxer-App/"
+                                    data-linkTo="https://hoziefa.github.io/Relaxer-App/"
+                                    data-description="Relax with a Relaxer App."
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Relaxer App</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/new-year-countdown.png"
                                     alt="New-Year-Countdown"
-                                    data-link="https://hoziefa.github.io/New-Year-Countdown/"
+                                    data-linkTo="https://hoziefa.github.io/New-Year-Countdown/"
+                                    data-description="Always be prepared for the new year."
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>New Year Countdown</h5>
                                 <i class="fas fa-search fa-lg"></i>
                             </div>
 
-                            <div class="category web-apps">
+                            <div class="category full-size web-apps">
                                 <img
                                     src="./images/portfolio/music-player.png"
                                     alt="Music-Player"
-                                    data-link="https://hoziefa.github.io/Music-Player/"
+                                    data-linkTo="https://hoziefa.github.io/Music-Player/"
+                                    data-description="is a Nicely designed Music Player"
+                                    data-tools=""
+                                    data-tags="html sass vanilla-js"
                                 />
                                 <h5>Music Player</h5>
                                 <i class="fas fa-search fa-lg"></i>

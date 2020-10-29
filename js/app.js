@@ -9,11 +9,15 @@ const elements = {
     navLinks: document.querySelector(".links-container"),
     categoriesNavigator: document.querySelector(".portfolio ul"),
     slidesContainer: document.querySelector(".categories"),
-    currentSlideTitle: document.querySelector(".modal-title"),
     slidesLength: document.querySelector(".modal-info"),
     modalContainer: document.querySelector(".modal-overlay"),
+    modalTitleHeader: document.getElementById("modal-details-header-title"),
+    modalTitleBody: document.getElementById("modal-details-body-title"),
+    modalDescription: document.getElementById("modal-details-body-desc"),
+    modalTools: document.getElementById("modal-details-body-tools"),
+    modalTags: document.getElementById("modal-details-body-tags"),
     modalImg: document.querySelector(".modal-overlay img"),
-    modalLink: document.querySelector(".modal-overlay a"),
+    modalLink: document.querySelector(".modal-overlay .modal-details #website-link"),
     loader: document.querySelector(".loader"),
 };
 
@@ -29,11 +33,27 @@ const changeSlidesDetails = (
     target,
     slide = elements.modalImg,
     link = elements.modalLink,
-    slideTitle = elements.currentSlideTitle,
+    slideTitleHeader = elements.modalTitleHeader,
+    slideTitleBody = elements.modalTitleBody,
+    slideDesc = elements.modalDescription,
+    slideTools = elements.modalTools,
+    slideTags = elements.modalTags,
 ) => {
-    [slide.src, slide.alt, link.href] = [target.src, target.alt, target.dataset.link];
+    const { src, alt, dataset: { linkto, description, tools, tags } = {} } = target;
 
-    slideTitle.textContent = target.parentElement.querySelector("h5").textContent.trim();
+    [slide.src, slide.alt, link.href] = [src, alt, linkto];
+
+    let targeTitle = target.parentElement.querySelector("h5").textContent.trim();
+
+    [slideTitleHeader, slideTitleBody].forEach(slideTitle => (slideTitle.textContent = targeTitle));
+
+    slideDesc.textContent = description && `"${targeTitle}" ${description}`;
+
+    slideTools.textContent = "";
+    tools && slideTools.insertAdjacentHTML("afterbegin", `<strong>Tools:</strong> ${tools}`);
+
+    slideTags.textContent = "";
+    tags && slideTags.insertAdjacentHTML("afterbegin", `<i class="fas fa-tag"></i> ${tags}`);
 };
 
 const slideNavigation = (direction, slides) => {
