@@ -41,6 +41,8 @@ const changeSlidesDetails = (
 ) => {
     const { src, alt, dataset: { linkto, description, tools, tags } = {} } = target;
 
+    slide.src = "";
+
     [slide.src, slide.alt, link.href] = [src, alt, linkto];
 
     let targeTitle = target.parentElement.querySelector("h5").textContent.trim();
