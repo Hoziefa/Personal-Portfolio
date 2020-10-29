@@ -629,7 +629,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .modal-overlay .modal-content .image-container::-webkit-scrollbar-track {
-    background: #1e1e24;
+    background-color: transparent;
 }
 
 .modal-overlay .modal-content .image-container::-webkit-scrollbar-thumb {
