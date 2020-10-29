@@ -717,6 +717,7 @@ input[type="color"]::-webkit-color-swatch {
     color: var(--primary-color);
     font-family: "Monoton", fantasy;
     text-transform: uppercase;
+    word-spacing: 8px;
 }
 
 .modal-overlay .modal-content .modal-details .modal-details-body .modal-details-body-box .modal-details-body-desc {
