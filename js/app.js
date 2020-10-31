@@ -49,7 +49,7 @@ const changeSlidesDetails = (
 
     [slideTitleHeader, slideTitleBody].forEach(slideTitle => (slideTitle.textContent = targeTitle));
 
-    slideDesc.textContent = description && `"${targeTitle}" ${description}`;
+    slideDesc.textContent = description && description;
 
     slideTools.textContent = "";
     tools && slideTools.insertAdjacentHTML("afterbegin", `<strong>Tools:</strong> ${tools}`);
