@@ -106,6 +106,8 @@ const handleColorsChange = ({ target = elements.colorsContainer.firstElementChil
 };
 
 const handleThemeChange = ({ target }) => {
+    if (!target.matches("span[class*=theme]")) return;
+
     removeClassAttr(target.parentElement.children);
 
     target.classList.add("active");
@@ -200,10 +202,20 @@ const handleSlideNavigation = ({ currentTarget, target }) => {
     target.matches(".next") && slideNavigation("next", slides);
 };
 
-elements.toggleDisplaySettingsBoxBtn.addEventListener("click", ({ currentTarget }) => {
-    currentTarget.firstElementChild.classList.toggle("fa-spin");
+document.addEventListener("click", ({ target }) => {
+    const { toggleDisplaySettingsBoxBtn: togglerBtn } = elements;
 
-    currentTarget.parentElement.classList.toggle("show");
+    if (!target.matches(`.${togglerBtn.parentElement.classList[0]}, .${togglerBtn.parentElement.classList[0]} *`)) {
+        togglerBtn.firstElementChild.classList.remove("fa-spin");
+
+        return togglerBtn.parentElement.classList.remove("show");
+    }
+
+    if (target.matches(`.${togglerBtn.classList[0]}`)) {
+        togglerBtn.firstElementChild.classList.toggle("fa-spin");
+
+        togglerBtn.parentElement.classList.toggle("show");
+    }
 });
 
 handleColorsChange({});
