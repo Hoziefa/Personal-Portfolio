@@ -885,7 +885,8 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 0 10px 10px 0;
 }
 
-.modal-overlay .modal-controls button:hover {
+.modal-overlay .modal-controls button:hover,
+.modal-overlay .modal-controls button:active {
     color: var(--light-bg);
     background-color: var(--primary-color);
 }
