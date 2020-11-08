@@ -565,13 +565,12 @@ input[type="color"]::-webkit-color-swatch {
     flex-basis: 600px;
     overflow: hidden;
     padding-bottom: 62px;
-    border-radius: 0 0 20px 20px;
 }
 
 @media (max-width: 600px) {
     .modal-overlay .modal-content {
         flex-basis: 90%;
-        padding-bottom: 6vh;
+        padding-bottom: 59px;
     }
 
     .modal-overlay .modal-content .image-container {
@@ -579,7 +578,7 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     .modal-overlay .modal-content .modal-details {
-        height: 6vh;
+        padding: 2rem 1rem !important;
     }
 }
 
