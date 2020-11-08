@@ -244,5 +244,3 @@ elements.personalColorInput.addEventListener("input", ({ target: { value = defau
 });
 
 window.onload = () => elements.loader.classList.add("active");
-
-document.querySelectorAll("img").forEach(img => img.setAttribute("loading", "lazy"));
