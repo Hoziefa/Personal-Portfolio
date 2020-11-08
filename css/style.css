@@ -1831,6 +1831,7 @@ section.portfolio .content .categories .category:hover h5 {
 
 section.portfolio .content .categories .category.full-size img {
     max-width: 100%;
+    min-height: 100%;
     height: auto;
 }
 
