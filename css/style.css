@@ -188,9 +188,9 @@ h2 {
 }
 
 p {
-    color: gray;
+    color: #9e9e9e;
     line-height: 1.6;
-    font-family: "Helvetica Neue WGL", "Helvetica Neue";
+    font-family: "Raleway", sans-serif;
 }
 
 p::first-letter {
@@ -1435,7 +1435,8 @@ section.about .content .info .actions button {
     transition: color 0.4s, background-color 0.4s, border 0.4s;
 }
 
-section.about .content .info .actions button:hover {
+section.about .content .info .actions button:hover,
+section.about .content .info .actions button:active {
     background-color: transparent;
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -1514,6 +1515,7 @@ section.about .content .education-experience .experience .timeline {
     border: 1px solid var(--dark-border);
     border-radius: 10px;
     position: relative;
+    min-height: 450px;
 }
 
 section.about .content .education-experience .education .timeline::before,
@@ -1570,8 +1572,9 @@ section.about .content .education-experience .experience .timeline div.timeline-
 
 section.about .content .education-experience .education .timeline div.timeline-box .text,
 section.about .content .education-experience .experience .timeline div.timeline-box .text {
-    font-family: "Lato";
+    font-family: "Raleway";
     color: #888;
+    text-transform: capitalize;
 }
 
 section.services {
