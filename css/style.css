@@ -575,7 +575,7 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     .modal-overlay .modal-content .image-container {
-        height: 65vh;
+        height: 65vh !important;
     }
 
     .modal-overlay .modal-content .modal-details {
@@ -617,7 +617,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .modal-overlay .modal-content .image-container {
-    max-height: 80vh;
+    height: 80vh;
     overflow: auto;
     background-color: var(--light-bg);
 }
