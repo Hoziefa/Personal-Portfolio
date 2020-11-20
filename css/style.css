@@ -606,7 +606,8 @@ input[type="color"]::-webkit-color-swatch {
     transition: color 0.4s, background-color 0.4s;
 }
 
-.modal-overlay .modal-content .close-btn:hover {
+.modal-overlay .modal-content .close-btn:hover,
+.modal-overlay .modal-content .close-btn:active {
     color: var(--primary-color);
     background-color: var(--dark-bg);
 }
