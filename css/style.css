@@ -88,6 +88,7 @@ section.contact header h2::after {
     background-color: var(--primary-color);
     height: 4px;
     left: 0;
+    border-radius: 0.5rem;
 }
 
 section.about header h2::before,
@@ -1515,7 +1516,13 @@ section.about .content .education-experience .experience .timeline {
     border: 1px solid var(--dark-border);
     border-radius: 10px;
     position: relative;
-    min-height: 450px;
+}
+
+@media (min-width: 400px) {
+    section.about .content .education-experience .education .timeline,
+    section.about .content .education-experience .experience .timeline {
+        min-height: 450px;
+    }
 }
 
 section.about .content .education-experience .education .timeline::before,
