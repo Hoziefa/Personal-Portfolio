@@ -1655,6 +1655,7 @@ section.services .content > div h5 {
     margin: 1.25rem 0;
     font-size: 1.25rem;
     text-transform: capitalize;
+    text-align: center;
 }
 
 section.services .content > div:hover i {
