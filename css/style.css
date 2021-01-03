@@ -1193,14 +1193,11 @@ input[type="color"]::-webkit-color-swatch {
     margin-bottom: 1rem;
 }
 
-.aside nav.nav ul.links-container li:hover {
-    padding-left: 6px;
-    border-bottom-color: var(--primary-color);
-}
-
 .aside nav.nav ul.links-container li.active,
 .aside nav.nav ul.links-container li:hover {
     color: var(--primary-color);
+    padding-left: 6px;
+    border-bottom-color: var(--primary-color);
 }
 
 .aside nav.nav ul.links-container li a {
